@@ -15,7 +15,9 @@ public class HowdyPrinter {
         System.out.println("Another one");
 
         System.out.println("Hello from main");
+        System.out.println("Hello from merge");
 
+        System.out.println("Hello from test");
     }
 
     public static String getPassword() {
