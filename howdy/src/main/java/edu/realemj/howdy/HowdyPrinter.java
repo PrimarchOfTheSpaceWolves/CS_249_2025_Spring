@@ -14,6 +14,8 @@ public class HowdyPrinter {
         System.out.println("Not quite done...");
         System.out.println("Another one");
 
+
+        System.out.println("Hello from test");
     }
 
     public static String getPassword() {
