@@ -15,6 +15,11 @@ public class Wasteland {
 
         System.out.println("Bob's health: " + bob.getHealth());
 
+        NPC sue = new NPC("Susan");
+        System.out.println(sue.getName());
+
+        NPC harold = new NPC("Harold", -200);
+
 
     }
 }
