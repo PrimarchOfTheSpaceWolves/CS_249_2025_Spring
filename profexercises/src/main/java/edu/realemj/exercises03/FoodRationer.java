@@ -4,6 +4,9 @@ import java.util.Scanner;
 
 public class FoodRationer {
     public static void main(String [] args) {
+
+        System.out.println("" + 4 + 5 + " dogs");
+
         Scanner input = new Scanner(System.in);
 
         System.out.println("Enter total food:");
