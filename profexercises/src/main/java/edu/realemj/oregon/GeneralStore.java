@@ -11,6 +11,7 @@ public class GeneralStore {
             printStock();
             String line = getUserInput(input);
             isDone = processUserPurchase(line, supplies);
+            System.out.println(supplies);
         }while(!isDone);
 
         printGoodbye();
@@ -31,8 +32,42 @@ public class GeneralStore {
     }
 
     private boolean processUserPurchase(String line, Supplies supplies) {
-        // TODO
-        return true;
+        // Format: <cnt> <item>
+        // Parse line
+        Scanner lineParse = new Scanner(line);
+        int cnt = lineParse.nextInt();
+        String item = lineParse.next();
+        item = item.toLowerCase();
+
+        if(cnt == 0) {
+            System.out.println("Nothing to your tastes, eh?");
+            return true;
+        }
+
+        // Figure out which item needs to be updated
+        boolean isDone = false;
+
+        switch(item) {
+            case "food" -> {
+                double current = supplies.getTotalFood();
+                current += cnt;
+                if(current >= 0) {
+                    supplies.setTotalFood(current);
+                }
+                else {
+                    System.out.println("Cannot sell that much food!");
+                }
+            }
+            default -> {
+                System.out.println("We don't sell that!");
+                isDone = true;
+            }
+        }
+
+        // Either 0 for cnt OR bad item, return true
+        // Otherwise, return false
+
+        return isDone;
     }
 
     private void printGoodbye() {
