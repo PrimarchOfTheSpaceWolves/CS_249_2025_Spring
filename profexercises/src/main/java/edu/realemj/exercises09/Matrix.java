@@ -79,6 +79,18 @@ public class Matrix {
         return sb.toString();
     }
 
+    public Matrix multiply(Matrix other) {
+        Matrix result = new Matrix(this.getRowCnt(), other.getColCnt());
+        for(int i = 0; i < this.getRowCnt(); i++) {
+            for(int j = 0; j < other.getColCnt(); j++) {
+                for(int k = 0; k < this.getColCnt(); k++) {
+                    result.m[i][j] += this.m[i][k]*other.m[k][j];
+                }
+            }
+        }
+        return result;
+    }
+
     public static Matrix makeIdentity(int size) {
         Matrix M = new Matrix(size, size);
         for(int i = 0; i < size; i++) {
