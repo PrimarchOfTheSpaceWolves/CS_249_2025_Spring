@@ -91,6 +91,10 @@ public class Matrix {
         return result;
     }
 
+    public String toPoint2DString() {
+        return "(" + m[0][0] + "," + m[1][0] + ")";
+    }
+
     public static Matrix makeIdentity(int size) {
         Matrix M = new Matrix(size, size);
         for(int i = 0; i < size; i++) {
