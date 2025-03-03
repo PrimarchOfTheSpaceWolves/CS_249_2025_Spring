@@ -1,0 +1,13 @@
+<diagram program="umletino" version="15.1"><zoom_level>12</zoom_level><element><id>UMLClass</id><coordinates><x>120</x><y>108</y><w>348</w><h>228</h></coordinates><panel_attributes>Circle
+--
+-radius:double
+-pos:Matrix
+--
++Circle()
++Circle(radius:double)
++Circle(radius:double, pos:Matrix)
++Circle(radius:double, pos:Matrix, filled:boolean)
++getRadius():double
++setRadius(radius:double):void
+_+checkValidRadius(radius:double):boolean_
+</panel_attributes><additional_attributes></additional_attributes></element></diagram>
