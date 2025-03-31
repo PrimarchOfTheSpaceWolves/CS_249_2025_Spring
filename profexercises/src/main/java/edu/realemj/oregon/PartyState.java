@@ -25,6 +25,26 @@ public class PartyState {
         return cnt;
     }
 
+    public boolean killRandom() {
+        if(getAliveCnt() == 0) {
+            return false;
+        }
+
+        ArrayList<Person> peopleAlive = new ArrayList<>();
+        for(Person p: party) {
+            if(p.isAlive()) {
+                peopleAlive.add(p);
+            }
+        }
+
+        int randomIndex = (int)(Math.random()*peopleAlive.size());
+        Person poorFellow = peopleAlive.get(randomIndex);
+        System.out.println(poorFellow + " has passed on.");
+        poorFellow.kill();
+
+        return true;
+    }
+
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("PARTY:\n");
@@ -48,5 +68,7 @@ public class PartyState {
         PartyState party = new PartyState(names);
         return party;
     }
+
+
 
 }
