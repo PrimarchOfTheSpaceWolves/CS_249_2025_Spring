@@ -1,6 +1,9 @@
 package edu.realemj.exercises12;
 
 import edu.realemj.exercises09.Matrix;
+import edu.realemj.exercises13.InvalidRadiusException;
+
+import java.lang.module.InvalidModuleDescriptorException;
 
 public class Circle extends Shape {
     private double radius = 1.0;
@@ -8,11 +11,13 @@ public class Circle extends Shape {
     public Circle() {
         // super();
     }
-    public Circle(double radius) {
+    public Circle(double radius) throws InvalidRadiusException {
         setRadius(radius);
     }
 
-    public Circle(double radius, Matrix pos, boolean filled) {
+    public Circle(double radius, Matrix pos, boolean filled)
+        throws InvalidRadiusException {
+
         super(pos, filled);
         setRadius(radius);
         //setPos(pos);
@@ -21,7 +26,13 @@ public class Circle extends Shape {
     }
 
     public double getRadius() { return radius; }
-    public void setRadius(double radius) { this.radius = radius; }
+    public void setRadius(double radius) throws InvalidRadiusException {
+        if(radius < 0.0) {
+            throw new InvalidRadiusException("Bad radius: " + radius);
+        }
+
+        this.radius = radius;
+    }
 
     @Override
     public String toString() {

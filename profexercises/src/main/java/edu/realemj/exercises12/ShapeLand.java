@@ -1,6 +1,9 @@
 package edu.realemj.exercises12;
 
 import edu.realemj.exercises09.Matrix;
+import edu.realemj.exercises13.InvalidRadiusException;
+
+import java.util.*;
 
 public class ShapeLand {
     public static void printShape(Shape s) {
@@ -30,5 +33,22 @@ public class ShapeLand {
 
         printShape(s2);
         printShape(c1);
+
+        ArrayList<Circle> circleList = new ArrayList<>();
+
+        try {
+            circleList.add(new Circle(6.3));
+            circleList.add(new Circle(-9.0));
+            circleList.add(new Circle(2.3));
+        }
+        catch(InvalidRadiusException e) {
+            System.err.println("Wrong radius!");
+            System.err.println(e.getMessage());
+        }
+
+        System.out.println("MY CIRCLES:");
+        for(Circle c: circleList) {
+            System.out.println(c);
+        }
     }
 }

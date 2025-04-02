@@ -26,6 +26,9 @@ public class Quotient {
         }
         catch(ArithmeticException ae) {
             System.out.println("CAUGHT MATH ISSUES.");
+            System.out.println(ae.getMessage());
+            System.out.println(ae);
+            ae.printStackTrace();
         }
         catch(Exception e) {
             System.out.println("SOMETHING ELSE BAD...");
