@@ -2,7 +2,7 @@ package edu.realemj.exercises12;
 
 import edu.realemj.exercises09.Matrix;
 
-public class Shape {
+public abstract class Shape {
     private Matrix pos = Matrix.makePoint2D(0,0);
     protected boolean filled = true;
 
@@ -30,7 +30,5 @@ public class Shape {
                 + ",filled=" + filled + "]";
     }
 
-    public double getArea() {
-        return 0;
-    }
+    public abstract double getArea();
 }

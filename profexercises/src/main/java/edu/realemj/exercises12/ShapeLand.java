@@ -18,37 +18,37 @@ public class ShapeLand {
         System.out.println("*********************************");
     }
     public static void main(String [] args) {
-        Shape s1 = new Shape();
-        Shape s2 = new Shape(Matrix.makePoint2D(5,-7), false);
-
-        //Circle c2 = new Circle(Matrix.makePoint2D(5,-7), false);
-
-        Circle c1 = new Circle();
-        c1.setFilled(false);
-        System.out.println(c1.getPos());
-
-        System.out.println(s1);
-        System.out.println(s2);
-        System.out.println(c1);
-
-        printShape(s2);
-        printShape(c1);
-
-        ArrayList<Circle> circleList = new ArrayList<>();
-
         try {
+            Shape s1 = new Circle(); // new Shape();
+            Shape s2 = new Circle(8.4, Matrix.makePoint2D(5,-7), false); // new Shape(Matrix.makePoint2D(5,-7), false);
+
+            //Circle c2 = new Circle(Matrix.makePoint2D(5,-7), false);
+
+            Circle c1 = new Circle();
+            c1.setFilled(false);
+            System.out.println(c1.getPos());
+
+            System.out.println(s1);
+            System.out.println(s2);
+            System.out.println(c1);
+
+            printShape(s2);
+            printShape(c1);
+
+            ArrayList<Circle> circleList = new ArrayList<>();
+
             circleList.add(new Circle(6.3));
             circleList.add(new Circle(-9.0));
             circleList.add(new Circle(2.3));
+
+            System.out.println("MY CIRCLES:");
+            for(Circle c: circleList) {
+                System.out.println(c);
+            }
         }
         catch(InvalidRadiusException e) {
             System.err.println("Wrong radius!");
             System.err.println(e.getMessage());
-        }
-
-        System.out.println("MY CIRCLES:");
-        for(Circle c: circleList) {
-            System.out.println(c);
         }
     }
 }

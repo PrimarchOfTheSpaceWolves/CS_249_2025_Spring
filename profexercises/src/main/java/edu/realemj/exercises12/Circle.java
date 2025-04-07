@@ -3,8 +3,6 @@ package edu.realemj.exercises12;
 import edu.realemj.exercises09.Matrix;
 import edu.realemj.exercises13.InvalidRadiusException;
 
-import java.lang.module.InvalidModuleDescriptorException;
-
 public class Circle extends Shape {
     private double radius = 1.0;
 

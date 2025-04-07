@@ -95,6 +95,14 @@ public class Matrix {
         return "(" + m[0][0] + "," + m[1][0] + ")";
     }
 
+    public String toPoint3DString() {
+
+        return "(" + m[0][0] + ","
+                + m[1][0] + ","
+                + m[2][0] + ")";
+    }
+
+
     public static Matrix makeIdentity(int size) {
         Matrix M = new Matrix(size, size);
         for(int i = 0; i < size; i++) {
@@ -115,6 +123,23 @@ public class Matrix {
         Matrix T = makeIdentity(3);
         T.set(0,2,offx);
         T.set(1,2,offy);
+        return T;
+    }
+
+    public static Matrix makePoint3D(double x, double y, double z) {
+        Matrix v = new Matrix(4, 1);
+        v.set(0,0, x);
+        v.set(1, 0, y);
+        v.set(2, 0, z);
+        v.set(3, 0, 1);
+        return v;
+    }
+
+    public static Matrix makeScaling3D(double sx, double sy, double sz) {
+        Matrix T = makeIdentity(4);
+        T.set(0,0, sx);
+        T.set(1,1, sy);
+        T.set(2,2, sz);
         return T;
     }
 }
