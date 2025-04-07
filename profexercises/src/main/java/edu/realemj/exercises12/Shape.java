@@ -6,10 +6,10 @@ public abstract class Shape {
     private Matrix pos = Matrix.makePoint2D(0,0);
     protected boolean filled = true;
 
-    public Shape() {
+    protected Shape() {
     }
 
-    public Shape(Matrix pos, boolean filled) {
+    protected Shape(Matrix pos, boolean filled) {
         setPos(pos);
         setFilled(filled);
     }

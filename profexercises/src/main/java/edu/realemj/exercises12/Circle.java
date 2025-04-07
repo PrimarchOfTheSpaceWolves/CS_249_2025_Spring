@@ -2,8 +2,9 @@ package edu.realemj.exercises12;
 
 import edu.realemj.exercises09.Matrix;
 import edu.realemj.exercises13.InvalidRadiusException;
+import edu.realemj.exercises14.*;
 
-public class Circle extends Shape {
+public class Circle extends Shape implements Drawable, Loadable {
     private double radius = 1.0;
 
     public Circle() {
@@ -52,4 +53,11 @@ public class Circle extends Shape {
             return false;
         }
     }
+
+    public void draw() {
+        System.out.println("DRAW A CIRCLE");
+    }
+
+    public void load(String filename) {}
+    public void save(String filename) {}
 }
