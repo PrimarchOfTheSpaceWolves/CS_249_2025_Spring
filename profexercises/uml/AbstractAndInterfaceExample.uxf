@@ -1,0 +1,18 @@
+<diagram program="umletino" version="15.1"><zoom_level>10</zoom_level><element><id>UMLClass</id><coordinates><x>40</x><y>300</y><w>170</w><h>100</h></coordinates><panel_attributes>Rectangle
+--
++Rectangle()
++computeArea():double
++toString():String
++rotate(angle:double):void</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>40</x><y>150</y><w>140</w><h>110</h></coordinates><panel_attributes>/Shape/
+--
++center:Matrix
+--
++getCenter():Matrix
+/+computeArea():double/
++toString():String
++move(x:int, y:int):void
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>40</x><y>10</y><w>150</w><h>80</h></coordinates><panel_attributes>&lt;&lt;interface&gt;&gt;
+/Transformable/
+--
+/+move(x:int, y:int):void/
+/+rotate(angle:double):void/</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>100</x><y>250</y><w>30</w><h>70</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>10;10;10;50</additional_attributes></element><element><id>Relation</id><coordinates><x>100</x><y>80</y><w>30</w><h>90</h></coordinates><panel_attributes>lt=&lt;&lt;.</panel_attributes><additional_attributes>10;10;10;70</additional_attributes></element></diagram>
