@@ -4,4 +4,6 @@ module profexercisesmod {
     requires transitive javafx.graphics;
 
     exports edu.realemj.exercises02;
+
+    exports edu.realemj.exercises18;
 }
